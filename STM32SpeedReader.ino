@@ -1,16 +1,6 @@
 /*
 CONNECTIONS:
 ------------
-STM32:
-For programming via serial:
-Tools/Board set to Generic STM32F103C
-Tools/Upload set to Serial
-Top jumper set to 1, press the button before uploading
-
-  PA9 /TX to PC RX (VIOLET)
-  PA10/RX to PC TX (GREY)
-  3V3               (RED)
-  GND              (BLUE)
 
  STM32 SPI1 pins:
   PA4 CS1
@@ -296,6 +286,10 @@ void loop(void)
         if(src > (peBook + strlen(peBook)))
         {
           setBookPtr();  // restart the book
+	  /* Toggle day and night mode just for the demo */
+          ReadingMode =  (DAY == ReadingMode) ? NIGHT : DAY; 
+          /* Redraw background with different reading mode */
+          drawSplashScreen();
         }
     }
 }
