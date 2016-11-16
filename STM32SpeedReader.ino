@@ -174,7 +174,7 @@ void drawSplashScreen(void)
 
 void ClearDrawArea(void)
 {
-  tft.fillRect(10, 90, 300, 60, ILI9341_BLACK);
+  tft.fillRect(10, 90, 300, 60, Background[ReadingMode]);
 }
 
 
